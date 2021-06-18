@@ -1,5 +1,5 @@
-import { fileURLToPath } from 'url'
-import { dirname, resolve } from 'path'
+import { fileURLToPath, pathToFileURL } from 'url'
+import { dirname, resolve, join } from 'path'
 import fs from 'fs-extra'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
@@ -14,8 +14,10 @@ export function getDirname(url) {
 }
 
 export async function getWebPackConfig() {
-  if (!await fs.pathExists(SHACK_CONFIG_FILE)) return mergeConfig({})
-  return mergeConfig(await import(resolve(SHACK_CONFIG_FILE)))
+  let configFile = join(process.cwd(), SHACK_CONFIG_FILE)
+  if (!await fs.pathExists(configFile)) return mergeConfig({})
+  let m = await import(pathToFileURL(configFile))
+  return mergeConfig(m.default)
 }
 
 function mergeConfig(conf = {}) {

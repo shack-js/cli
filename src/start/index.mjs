@@ -2,7 +2,7 @@ import command from '../command.mjs'
 import getApp from '@shack-js/runner-express'
 
 export default () => command.command('start')
-  .option('-p, --port <port>', 'on port', parseInt, 3000)
+  .option('-p, --port <port>', 'on port', x=>parseInt(x), 3000)
   .option('-e, --extension <extension>', 'api extension', '.mjs')
   .option('-a, --apis <folder>', 'api folder', 'apis')
   .option('-s, --static <folder>', 'static folder', 'dist')

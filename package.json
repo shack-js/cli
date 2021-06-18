@@ -1,7 +1,7 @@
 {
   "name": "@shack-js/cli",
-  "version": "1.0.3",
-  "description": "",
+  "version": "1.0.4",
+  "description": "cli fro shack.js",
   "main": "src/index.mjs",
   "bin": {
     "shack": "src/index.mjs"

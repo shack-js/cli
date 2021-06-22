@@ -12,6 +12,9 @@ export default () => command.command('dev')
     let { port = 3000, extension = '.mjs' } = options
     // console.log({ extension }, options)
     let conf = await getWebPackConfig()
+    // let p = resolve(process.cwd(), 'webpack.config.mjs')
+    // let conf = (await import(pathToFileURL(p))).default
+    // console.log(conf)
     let compiler = webpack({ ...conf, mode: 'development' })
     let app = await getApp({ extension })
     app.use(middleware(compiler, {}))

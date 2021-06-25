@@ -16,7 +16,8 @@ export default () => command.command('dev')
     let { port = 3000, extension = '.mjs', writedisk, ...rest } = options
     // console.log({ extension }, options)
     let conf = await getWebPackConfig()
-    conf.plugins.unshift(new webpack.HotModuleReplacementPlugin())
+    conf.devtool = conf.devtool || 'inline-source-map',
+      conf.plugins.unshift(new webpack.HotModuleReplacementPlugin())
     let hotEntry = 'webpack-hot-middleware/client?reload=true'
     if (Array.isArray(conf.entry)) {
       conf.entry.unshift(hotEntry)

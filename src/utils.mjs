@@ -51,6 +51,7 @@ function mergeConfig(conf = {}) {
 
 function getDefaultConfig() {
   return {
+    devtool: 'inline-source-map',
     entry: resolve(process.cwd(), './web/index.mjs'),
     output: {
       path: resolve(process.cwd(), './dist'),

@@ -1,6 +1,6 @@
 {
   "name": "@shack-js/cli",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "description": "cli fro shack.js",
   "main": "src/index.mjs",
   "bin": {
@@ -22,13 +22,14 @@
   },
   "homepage": "https://github.com/shack-js/cli#readme",
   "dependencies": {
-    "@shack-js/loader-fetch": "^1.0.1",
-    "@shack-js/runner-express": "^1.0.5",
+    "@shack-js/loader-fetch": "^1.0.2",
+    "@shack-js/runner-express": "^1.0.6",
     "@shack-js/template-repo": "^1.0.4",
     "commander": "^7.2.0",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.3.1",
     "webpack": "^5.39.0",
-    "webpack-dev-middleware": "^5.0.0"
+    "webpack-dev-middleware": "^5.0.0",
+    "webpack-hot-middleware": "^2.25.0"
   }
 }

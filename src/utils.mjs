@@ -49,7 +49,9 @@ function mergeConfig(conf = {}) {
   }
   if (!c.plugins.some(x => x.constructor && x.constructor.name == 'ExtraCodeWebpackPlugin')) {
     c.plugins.push(new ExtraCodeWebpackPlugin({
-      codes: ({ isDev, isEntry }) => (isEntry && isDev) ? `import.meta.webpackHot.accept()` : ``
+      codes: ({ isDev, isEntry }) => (isEntry && isDev) ? `
+      // @ts-ignore
+      import.meta.webpackHot.accept()` : ``
     }))
   }
   return c

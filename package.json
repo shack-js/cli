@@ -1,6 +1,6 @@
 {
   "name": "@shack-js/cli",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "cli fro shack.js",
   "main": "src/index.mjs",
   "bin": {
@@ -29,7 +29,7 @@
     "extra-code-webpack-plugin": "^1.0.2",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.3.1",
-    "webpack": "^5.39.0",
+    "webpack": "5.45.1",
     "webpack-dev-middleware": "^5.0.0",
     "webpack-hot-middleware": "^2.25.0"
   }

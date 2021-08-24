@@ -7,7 +7,7 @@ export default () => command.command('init <name>')
   .option('-d, --defaults <key>=<value>', 'default values', collect, {})
   .action(async (name, { defaults, template }) => {
     await tpl({ name, ...defaults }, repo(template), name)
-    console.log(`project generated, run 'cd ${name} && npm i' to install dependencies`)
+    console.log(`project generated, run 'cd ${name}' and 'npm i' to install dependencies`)
     console.log(`for more information check README.md in generated project`)
   })
 

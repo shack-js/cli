@@ -1,6 +1,6 @@
 {
   "name": "@shack-js/cli",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "cli fro shack.js",
   "main": "src/index.mjs",
   "bin": {
@@ -23,7 +23,7 @@
   "homepage": "https://github.com/shack-js/cli#readme",
   "dependencies": {
     "@shack-js/loader-fetch": "^1.0.8",
-    "@shack-js/runner-express": "^1.0.6",
+    "@shack-js/runner-express": "^1.0.10",
     "@shack-js/template-repo": "^1.0.4",
     "commander": "^7.2.0",
     "extra-code-webpack-plugin": "^1.0.2",

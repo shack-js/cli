@@ -1,7 +1,7 @@
 {
   "name": "@shack-js/cli",
-  "version": "1.0.20",
-  "description": "cli fro shack.js",
+  "version": "1.0.22",
+  "description": "cli for shack.js",
   "main": "src/index.mjs",
   "bin": {
     "shack": "src/index.mjs"
@@ -15,7 +15,7 @@
     "url": "git+https://github.com/shack-js/cli.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "postor@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/shack-js/cli/issues"
@@ -29,6 +29,7 @@
     "extra-code-webpack-plugin": "^1.0.2",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.3.1",
+    "http-terminator": "^3.0.0",
     "webpack": "5.45.1",
     "webpack-dev-middleware": "^5.0.0",
     "webpack-hot-middleware": "^2.25.0"

@@ -3,7 +3,7 @@ import { getDevApp } from './get-dev-app.mjs'
 
 
 export default () => command.command('dev')
-  .option('-p, --port <port>', 'on port', parseInt, 3000)
+  .option('-p, --port <port>', 'on port', x => parseInt(x), 3000)
   .option('-e, --extension <extension>', 'api extension', '.mjs')
   .option('-a, --apis <folder>', 'api folder', 'apis')
   .option('-w, --writedisk [boolean]', 'write assets to disk', str => str != 'false', false)

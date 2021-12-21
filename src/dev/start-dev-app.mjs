@@ -1,12 +1,22 @@
 import { getWebPackConfig } from '../utils.mjs'
-import webpack from 'webpack'
-import middleware from 'webpack-dev-middleware'
-import middlewarehot from 'webpack-hot-middleware'
 import getApp from '@shack-js/runner-express'
 
-export const getDevApp = async (options) => {
+import Webpack from "webpack"
+import WebpackDevServer from "webpack-dev-server"
+
+
+const compiler = Webpack(webpackConfig);
+const devServerOptions = { ...webpackConfig.devServer, open: true };
+const server = new WebpackDevServer(devServerOptions, compiler);
+
+server.startCallback(() => {
+  console.log("Starting server on http://localhost:8080");
+})
+
+
+export const startDevApp = async (options) => {
   // console.log(options)
-  let { extension = '.mjs', writedisk, ...rest } = options
+  let { extension = '.mjs', ...rest,port } = options
   // console.log({ extension }, options)
   let conf = await getWebPackConfig()
   conf.devtool = conf.devtool || 'inline-source-map',

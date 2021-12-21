@@ -2,7 +2,6 @@ import { fileURLToPath, pathToFileURL } from 'url'
 import { dirname, resolve, join } from 'path'
 import fs from 'fs-extra'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import ExtraCodeWebpackPlugin from 'extra-code-webpack-plugin'
 
 const SHACK_CONFIG_FILE = 'shack.config.mjs'
 
@@ -46,13 +45,6 @@ function mergeConfig(conf = {}) {
   if (!c.plugins) c.plugins = []
   if (!c.plugins.some(x => x.constructor && x.constructor.name == 'HtmlWebpackPlugin')) {
     c.plugins.push(new HtmlWebpackPlugin)
-  }
-  if (!c.plugins.some(x => x.constructor && x.constructor.name == 'ExtraCodeWebpackPlugin')) {
-    c.plugins.push(new ExtraCodeWebpackPlugin({
-      codes: ({ isDev, isEntry }) => (isEntry && isDev) ? `
-      // @ts-ignore
-      import.meta.webpackHot.accept()` : ``
-    }))
   }
   return c
 }

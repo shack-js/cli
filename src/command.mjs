@@ -1,4 +1,4 @@
 
-import commander from 'commander'
-const command = commander.createCommand('shack')
+import {Command} from 'commander'
+const command = new Command('shack')
 export default command
